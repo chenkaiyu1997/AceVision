@@ -4,3 +4,12 @@
   float: left;
   text-align: left;
 }
+
+.search-dropdown-item{
+  padding: 0 5px;
+}
+
+.search-body{
+  width:80%;
+  margin:0 auto;
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Ace Vision</title>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/acevision.css"  type="text/css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default" role="navigation" style="padding:0 0">
+      <div class="container-fluid bg-success" style="padding:0 10%">
+    <div class="navbar-header" >
+        <a class="navbar-brand" href="index.html">Ace Vision</a>
+     </div>
+     <div >
+        <ul class="nav navbar-nav" style="float:right">
+           <!-- <li class="active"><a href="#">iOS</a></li> -->
+           <li><a href="#">Sign In</a></li>
+           <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 Java
+                 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                 <li><a href="#">jmeter</a></li>
+                 <li><a href="#">EJB</a></li>
+                 <li><a href="#">Jasper Report</a></li>
+                 <li class="divider"></li>
+                 <li><a href="#">分离的链接</a></li>
+                 <li class="divider"></li>
+                 <li><a href="#">另一个分离的链接</a></li>
+              </ul>
+           </li> -->
+        </ul>
+     </div>
+   </div>
+  </nav>
+    <div class="search-body" style="width:80%;margin:0 auto">
+      <div class="affiliation-title" style="margin-bottom:20px">
+        <h1><p class="text-muted" id = "mainname">
+          Shanghai Jiao Tong University
+        </p></h1>
+      </div>
+        <script src="./js/getapi.js" type="text/javascript"></script>
+        <script>
+            var json1;
+        var paper=[];
+        var year=[],field=[],author=[],affiliation=[],journal=[],conference=[];
+        var sarray=[];
+        window.onload=myonload(4);
+        </script>
+      <div class="affiliation-left" style="width:30%;float:left">
+        <h4><p class="text-muted">
+          Professor List
+        </p></h5>
+        <table style="margin-top:30px" class="table table-hover">
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Citations</th>
+<!--
+          <tr>
+            <td>1</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Zhihua Zhou</td>
+            <td>10000</td>
+          </tr>
+-->
+        <script type="text/javascript">
+          var af_au = new Array(20);
+          var i = 0;
+          for (var au in author) {
+            if(i==20)break;
+            af_au[i]=new Object();
+            af_au[i].name = au;
+            af_au[i].citation = author[au].Gindex;
+
+            document.write("<tr><td>");
+              document.write(i+1);
+              document.write("</td><td>");
+            document.write(af_au[i].name);
+            document.write("</td><td>");
+            document.write(af_au[i].citation);
+            document.write("</td></tr>");
+            i++;
+          }
+
+        </script>
+        </table>
+
+      </div>
+      <div class="affiliation-right">
+        <div class="affiliation-paper">
+          <div class="ability" style="padding-left:30px;float:left">
+            <div id="ability" style="width:700px;height:350px;padding-right:200px"></div>
+            <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('ability'));
+
+                  // 指定图表的配置项和数据
+                  var option = {
+    title: {
+        text: 'Overall Academic Ability'
+    },
+    legend: {
+        data: ['张三', '李四']
+    },
+    radar: [
+
+        {
+            indicator: [
+                { text: 'Influence', max: 150 },
+                { text: 'Publication', max: 150 },
+                { text: 'Professor', max: 150 },
+                { text: 'Funding', max: 120 },
+                { text: 'Industry', max: 108 }
+                // { text: '生物', max: 72 }
+            ],
+            center: ['75%', '50%'],
+            radius: 120
+        }
+    ],
+    series: [
+        {
+            name: '成绩单',
+            type: 'radar',
+            radarIndex: 0,
+            data: [
+                {
+                    value: [120, 118, 130, 100, 99],
+                    name: 'SJTU',
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter:function(params) {
+                                return params.value;
+                            }
+                        }
+                    }
+                }
+
+            ]
+        }
+    ]
+};
+
+                  // 使用刚指定的配置项和数据显示图表。
+                  myChart.setOption(option);
+            </script>
+
+
+        </div>
+          <!-- <h4><p class="text-muted">
+            Recent Publication
+          </p></h4> -->
+          <div id="paper" style="width:700px;height:350px;float:left;padding-left:30px"></div>
+          <script type="text/javascript">
+          var myChart = echarts.init(document.getElementById('paper'));
+
+                // 指定图表的配置项和数据
+                var option = {
+            title: {
+                text: 'Publication Statistics'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['Paper']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : ['2009','2010','2011','2012','2013','2014','2015']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'Publication',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                //    data:[year["2009"].totnumber, year["2010"].totnumber, year["2011"].totnumber, year["2012"].totnumber, year["2013"].totnumber, year["2014"].totnumber,year["2015"].totnumber]
+                }
+                // {
+                //     name:'联盟广告',
+                //     type:'line',
+                //     stack: '总量',
+                //     areaStyle: {normal: {}},
+                //     data:[220, 182, 191, 234, 290, 330, 310]
+                // },
+                // {
+                //     name:'视频广告',
+                //     type:'line',
+                //     stack: '总量',
+                //     areaStyle: {normal: {}},
+                //     data:[150, 232, 201, 154, 190, 330, 410]
+                // },
+                // {
+                //     name:'直接访问',
+                //     type:'line',
+                //     stack: '总量',
+                //     areaStyle: {normal: {}},
+                //     data:[320, 332, 301, 334, 390, 330, 320]
+                // },
+                // {
+                //     name:'搜索引擎',
+                //     type:'line',
+                //     stack: '总量',
+                //     label: {
+                //         normal: {
+                //             show: true,
+                //             position: 'top'
+                //         }
+                //     },
+                //     areaStyle: {normal: {}},
+                //     data:[820, 932, 901, 934, 1290, 1330, 1320]
+                // }
+            ]
+            };
+            /*  for(i=1999;i<2017;i++)
+                  if(year[i.toString]!=undefined) {
+                      alert(year[i].totnumber);
+                    option.series[0].data.push(year[i].totnumber);
+                  }*/
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+          </script>
+        </div>
+        <div class="field" style="margin:30px 30px">
+          <div id="field" style="width:700px;height:350px;float:left"></div>
+          <script type="text/javascript">
+          // var top_field = Array(8);
+          // var total_paper = 0;
+          // for (var f in field) {
+          //   if (field[f].totnumber>) {
+          //
+          //   }
+          // }
+          var myChart = echarts.init(document.getElementById('field'));
+
+                // 指定图表的配置项和数据
+                var option = {
+    title : {
+        text: 'Famous Fields',
+
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        x : 'center',
+        y : 'bottom',
+        data:['rose1','rose2','rose3','rose4','rose5','rose6','rose7','rose8']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true,
+                type: ['pie', 'funnel']
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'半径模式',
+            type:'pie',
+            radius : [20, 110],
+            center : ['25%', 200],
+            roseType : 'radius',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            lableLine: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:10, name:'rose1'},
+                {value:5, name:'rose2'},
+                {value:15, name:'rose3'},
+                {value:25, name:'rose4'},
+                {value:20, name:'rose5'},
+                {value:35, name:'rose6'},
+                {value:30, name:'rose7'},
+                {value:40, name:'rose8'}
+            ]
+        },
+        {
+            name:'面积模式',
+            type:'pie',
+            radius : [30, 110],
+            center : ['75%', 200],
+            roseType : 'area',
+            data:[
+                {value:10, name:'rose1'},
+                {value:5, name:'rose2'},
+                {value:15, name:'rose3'},
+                {value:25, name:'rose4'},
+                {value:20, name:'rose5'},
+                {value:35, name:'rose6'},
+                {value:30, name:'rose7'},
+                {value:40, name:'rose8'}
+            ]
+        }
+    ]
+};
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+          </script>
+
+        </div>
+
+      </div>
+
+    <!-- search body -->
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.js" type="text/javascript"></script>
+
+  </body>
+</html>
