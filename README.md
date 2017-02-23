@@ -1,6 +1,7 @@
 # Overview
 AceVision is an academic search engine using D3.js for visualization, powered by microsoft academic API. 
-This project is created during the *2016 Microsoft Beauty of Programming Contest- Final Round* Hackathon.
+
+This project is created during the *2016 Microsoft Beauty of Programming Contest- Final Round* Hackathon, by Yuan Yao, Yihan Dong, Kaiyu Chen, and Deyu Guan.
 
 ### Features
 * Beautiful and clear visualizaiton of data using D3.js and echart.js
