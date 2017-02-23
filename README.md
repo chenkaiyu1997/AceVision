@@ -14,4 +14,5 @@ This project is created during the *2016 Microsoft Beauty of Programming Contest
 * Data processing: jQuery + Microsoft Academic API
 
 # Demo
+![image](https://github.com/chenkaiyu1997/AceVision/raw/master/476773719649316766.png)
 ![image](https://github.com/chenkaiyu1997/AceVision/raw/master/488472118200515521.png)
